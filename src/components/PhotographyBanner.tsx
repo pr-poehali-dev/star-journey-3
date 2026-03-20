@@ -756,109 +756,239 @@ const PhotographyBanner: React.FC = () => {
         .testimonials-section::before {
           content: "";
           border-radius: 197.5px 0px;
-          opacity: 0.4;
+          opacity: 0.3;
           background: #cb4b16;
-          filter: blur(120px);
+          filter: blur(140px);
           height: 50%;
           width: 30%;
           position: absolute;
           top: 50%;
           left: -15%;
           transform: translateY(-50%);
-          z-index: -1;
+          z-index: 0;
         }
 
         .testimonials-container {
-          max-width: 1200px;
+          max-width: 1300px;
           margin: 0 auto;
-          text-align: center;
+          position: relative;
+          z-index: 1;
         }
 
         .testimonials-title {
           color: #fff;
           font-family: "Montserrat", sans-serif;
           font-weight: 700;
-          font-size: clamp(60px, 8vw, 100px);
+          font-size: clamp(50px, 7vw, 90px);
           line-height: 0.9;
-          margin: 0 0 80px;
+          margin: 0 0 16px;
           text-transform: uppercase;
         }
 
-        .testimonials-marquee {
-          display: flex;
-          animation: scroll 30s linear infinite;
-          gap: 40px;
-          width: max-content;
-        }
-
-        .testimonials-marquee:hover {
-          animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .testimonial-card {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid #333;
-          border-radius: 20px;
-          padding: 40px 30px;
-          position: relative;
-          backdrop-filter: blur(10px);
-          width: 380px;
-          text-align: left;
-          flex-shrink: 0;
-        }
-
-        .testimonial-quote {
-          color: #fff;
-          font-family: "Inter", sans-serif;
-          font-weight: 400;
+        .testimonials-subtitle {
+          color: #657b83;
+          font-family: "Montserrat", sans-serif;
           font-size: 16px;
-          line-height: 1.8;
-          margin: 0 0 30px;
-          font-style: italic;
+          margin: 0 0 70px;
+          line-height: 1.6;
         }
 
-        .testimonial-author {
+        .people-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+
+        .person-card {
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(203, 75, 22, 0.2);
+          border-radius: 20px;
+          padding: 36px 30px;
+          position: relative;
+          transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .person-card:hover {
+          border-color: rgba(203, 75, 22, 0.6);
+          transform: translateY(-4px);
+        }
+
+        .person-card-top {
           display: flex;
-          font-family: "Inter", sans-serif;
           align-items: center;
-          gap: 15px;
+          gap: 18px;
+          margin-bottom: 20px;
         }
 
-        .author-avatar {
-          width: 50px;
-          height: 50px;
+        .person-avatar {
+          width: 64px;
+          height: 64px;
           border-radius: 50%;
-          background: #cb4b16;
+          background: linear-gradient(135deg, #cb4b16, #a03810);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-weight: bold;
-          color: #fff;
-          font-size: 18px;
+          font-size: 28px;
+          flex-shrink: 0;
+          border: 2px solid rgba(203,75,22,0.4);
         }
 
-        .author-info h4 {
+        .person-meta h3 {
+          color: #fff;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 17px;
+          text-transform: uppercase;
+          margin: 0 0 5px;
+        }
+
+        .person-meta .person-role {
           color: #cb4b16;
+          font-family: "Montserrat", sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin: 0;
+        }
+
+        .person-years {
+          display: inline-block;
+          background: rgba(203, 75, 22, 0.15);
+          color: #cb4b16;
+          font-family: "Montserrat", sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          padding: 4px 12px;
+          border-radius: 20px;
+          margin-bottom: 16px;
+        }
+
+        .person-bio {
+          color: #93a1a1;
           font-family: "Inter", sans-serif;
           font-size: 14px;
+          line-height: 1.75;
+          margin: 0;
+        }
+
+        /* ========== DOCUMENTS SECTION ========== */
+        .documents-section {
+          padding: 100px 30px;
+          background-color: #002b36;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .documents-section::before {
+          content: "";
+          border-radius: 197.5px 0px;
+          opacity: 0.25;
+          background: #268bd2;
+          filter: blur(160px);
+          height: 50%;
+          width: 40%;
+          position: absolute;
+          bottom: -10%;
+          right: -20%;
+          z-index: 0;
+        }
+
+        .documents-container {
+          max-width: 1300px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+        }
+
+        .documents-header {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: end;
+          margin-bottom: 60px;
+        }
+
+        .documents-title {
+          color: #fff;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: clamp(50px, 7vw, 90px);
+          line-height: 0.9;
           margin: 0;
           text-transform: uppercase;
         }
 
-        .author-info p {
-          color: #aaa;
+        .documents-title .highlight {
+          color: #cb4b16;
+        }
+
+        .documents-intro {
+          color: #657b83;
           font-family: "Inter", sans-serif;
+          font-size: 15px;
+          line-height: 1.8;
+          margin: 0;
+        }
+
+        .documents-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .doc-card {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid #073642;
+          border-left: 4px solid #cb4b16;
+          border-radius: 0 16px 16px 0;
+          padding: 32px 30px;
+          position: relative;
+          transition: background 0.3s ease;
+        }
+
+        .doc-card:hover {
+          background: rgba(203,75,22,0.06);
+        }
+
+        .doc-card-type {
+          color: #cb4b16;
+          font-family: "Montserrat", sans-serif;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          margin: 0 0 14px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .doc-card-type::before {
+          content: "";
+          width: 20px;
+          height: 2px;
+          background: #cb4b16;
+          flex-shrink: 0;
+        }
+
+        .doc-quote {
+          color: #fff;
+          font-family: "Inter", sans-serif;
+          font-size: 16px;
+          font-style: italic;
+          line-height: 1.8;
+          margin: 0 0 20px;
+        }
+
+        .doc-source {
+          color: #657b83;
+          font-family: "Montserrat", sans-serif;
           font-size: 12px;
-          margin: 5px 0 0;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin: 0;
         }
 
         /* ========== CTA SECTION ========== */
@@ -953,6 +1083,7 @@ const PhotographyBanner: React.FC = () => {
           .route-section,
           .features-section,
           .testimonials-section,
+          .documents-section,
           .cta-section {
             padding: 80px 20px;
           }
@@ -963,8 +1094,12 @@ const PhotographyBanner: React.FC = () => {
           .features-container {
             gap: 40px;
           }
-          .testimonials-marquee {
-            gap: 30px;
+          .people-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .documents-header {
+            grid-template-columns: 1fr;
+            gap: 20px;
           }
           .cta-buttons {
             gap: 20px;
@@ -975,6 +1110,7 @@ const PhotographyBanner: React.FC = () => {
           .route-section,
           .features-section,
           .testimonials-section,
+          .documents-section,
           .cta-section {
             padding: 60px 16px;
           }
@@ -982,12 +1118,11 @@ const PhotographyBanner: React.FC = () => {
             grid-template-columns: 1fr;
             gap: 30px;
           }
-          .testimonials-marquee {
-            gap: 25px;
+          .people-grid {
+            grid-template-columns: 1fr;
           }
-          .testimonial-card {
-            padding: 30px 20px;
-            width: 300px;
+          .documents-grid {
+            grid-template-columns: 1fr;
           }
           .cta-buttons {
             flex-direction: column;
@@ -1184,81 +1319,136 @@ const PhotographyBanner: React.FC = () => {
           </section>
 
           {/* KEY PEOPLE */}
-          <section className="testimonials-section">
+          <section className="testimonials-section" id="people">
             <div className="testimonials-container">
-              <h2 className="testimonials-title">Ключевые<br />люди</h2>
-              <div className="testimonials-marquee">
-                <div className="testimonial-card">
-                  <p className="testimonial-quote">
-                    «Составить точнейшее описание берегов и устьев рек, впадающих в Охотское море, со всеми островами» — такова была задача отряда.
-                  </p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">📜</div>
-                    <div className="author-info">
-                      <h4>Дмитрий Лаптев</h4>
-                      <p>Командир Ленского отряда, соратник экспедиции</p>
+              <p className="section-label">Биографии</p>
+              <h2 className="testimonials-title">Ключевые<br />участники</h2>
+              <p className="testimonials-subtitle">Люди, чьи имена навсегда вошли в историю Великой Северной экспедиции</p>
+              <div className="people-grid">
+                <div className="person-card">
+                  <div className="person-card-top">
+                    <div className="person-avatar">⚓</div>
+                    <div className="person-meta">
+                      <h3>Витус Беринг</h3>
+                      <p className="person-role">Командующий экспедицией</p>
                     </div>
                   </div>
+                  <span className="person-years">1681 – 1741</span>
+                  <p className="person-bio">
+                    Датский мореплаватель на русской службе, организатор и руководитель Второй Камчатской экспедиции (ВСЭ). По его инициативе и под его общим руководством отряды одновременно исследовали побережье от Белого моря до Тихого океана. Погиб в 1741 году на острове, носящем его имя, во время последней экспедиции к берегам Америки.
+                  </p>
                 </div>
-                <div className="testimonial-card">
-                  <p className="testimonial-quote">
-                    Иван Биллингс прошёл сложнейший маршрут через хребет Джугджур, ведя непрерывные астрономические наблюдения для определения координат.
-                  </p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">🔭</div>
-                    <div className="author-info">
-                      <h4>Геодезисты отряда</h4>
-                      <p>Астрономические и триангуляционные наблюдения</p>
+                <div className="person-card">
+                  <div className="person-card-top">
+                    <div className="person-avatar">🗺</div>
+                    <div className="person-meta">
+                      <h3>Дмитрий Лаптев</h3>
+                      <p className="person-role">Морской офицер, исследователь</p>
                     </div>
                   </div>
+                  <span className="person-years">1701 – 1771</span>
+                  <p className="person-bio">
+                    Командовал Ленско-Колымским отрядом ВСЭ. Описал побережье от устья Лены до реки Колыма, прошёл Чукотское море. Брат Харитона Лаптева — оба дали имя морю Лаптевых. Свои труды изложил в рапортах Адмиралтейств-коллегии, ставших ценнейшим источником по географии Северо-Востока.
+                  </p>
                 </div>
-                <div className="testimonial-card">
-                  <p className="testimonial-quote">
-                    Великая Северная экспедиция — крупнейшее исследовательское предприятие XVIII века, охватившее побережье от Архангельска до Камчатки.
-                  </p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">⚡</div>
-                    <div className="author-info">
-                      <h4>Витус Беринг</h4>
-                      <p>Организатор Второй Камчатской экспедиции</p>
+                <div className="person-card">
+                  <div className="person-card-top">
+                    <div className="person-avatar">🔭</div>
+                    <div className="person-meta">
+                      <h3>Семён Челюскин</h3>
+                      <p className="person-role">Геодезист, штурман</p>
                     </div>
                   </div>
+                  <span className="person-years">ок. 1700 – 1764</span>
+                  <p className="person-bio">
+                    Первым достиг крайней северной точки Евразии в 1742 году — мыса, названного его именем. В ходе ВСЭ выполнял астрономические наблюдения и картографическую съёмку побережья Таймыра. Его точность измерений, сделанных в жесточайших условиях арктической зимы, поразила учёных XVIII века.
+                  </p>
                 </div>
-                <div className="testimonial-card">
-                  <p className="testimonial-quote">
-                    Степан Малыгин, Семён Челюскин, братья Лаптевы — имена первопроходцев, чьи открытия навсегда вошли в историю географии.
-                  </p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">🧭</div>
-                    <div className="author-info">
-                      <h4>Участники ВСЭ</h4>
-                      <p>Первопроходцы северных морей</p>
+                <div className="person-card">
+                  <div className="person-card-top">
+                    <div className="person-avatar">⚔</div>
+                    <div className="person-meta">
+                      <h3>Степан Малыгин</h3>
+                      <p className="person-role">Капитан, руководитель отряда</p>
                     </div>
                   </div>
+                  <span className="person-years">ок. 1702 – 1764</span>
+                  <p className="person-bio">
+                    Командовал Обско-Ямальским отрядом ВСЭ, исследовал побережье от Архангельска до устья Оби. Первым прошёл Карское море с запада на восток. Автор первого русского учебника по навигации — «Спосо̒б плавать по льдам» (1733). Пролив Малыгина назван в его честь.
+                  </p>
                 </div>
-                <div className="testimonial-card">
-                  <p className="testimonial-quote">
-                    «Составить точнейшее описание берегов и устьев рек, впадающих в Охотское море, со всеми островами» — такова была задача отряда.
-                  </p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">📜</div>
-                    <div className="author-info">
-                      <h4>Дмитрий Лаптев</h4>
-                      <p>Командир Ленского отряда, соратник экспедиции</p>
+                <div className="person-card">
+                  <div className="person-card-top">
+                    <div className="person-avatar">🌿</div>
+                    <div className="person-meta">
+                      <h3>Герхард Миллер</h3>
+                      <p className="person-role">Историограф, академик</p>
                     </div>
                   </div>
+                  <span className="person-years">1705 – 1783</span>
+                  <p className="person-bio">
+                    Историограф ВСЭ, проехавший тысячи вёрст по Сибири. Собрал колоссальный архив исторических документов, описал народы и нравы края. Его труд «История Сибири» — фундаментальный источник по истории освоения Востока России. Академик Петербургской академии наук.
+                  </p>
                 </div>
-                <div className="testimonial-card">
-                  <p className="testimonial-quote">
-                    Иван Биллингс прошёл сложнейший маршрут через хребет Джугджур, ведя непрерывные астрономические наблюдения для определения координат.
-                  </p>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">🔭</div>
-                    <div className="author-info">
-                      <h4>Геодезисты отряда</h4>
-                      <p>Астрономические и триангуляционные наблюдения</p>
+                <div className="person-card">
+                  <div className="person-card-top">
+                    <div className="person-avatar">📐</div>
+                    <div className="person-meta">
+                      <h3>Алексей Чириков</h3>
+                      <p className="person-role">Капитан-командор, навигатор</p>
                     </div>
                   </div>
+                  <span className="person-years">1703 – 1748</span>
+                  <p className="person-bio">
+                    Заместитель Беринга и один из главных исполнителей ВСЭ. В 1741 году на пакетботе «Святой Павел» первым из европейцев достиг северо-западного побережья Америки — за сутки до Беринга. Составил подробные карты тихоокеанского побережья и Алеутских островов.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* DOCUMENTS */}
+          <section className="documents-section" id="documents">
+            <div className="documents-container">
+              <div className="documents-header">
+                <div>
+                  <p className="section-label">Первоисточники</p>
+                  <h2 className="documents-title">
+                    Документы<br /><span className="highlight">и цитаты</span>
+                  </h2>
+                </div>
+                <p className="documents-intro">
+                  Рапорты, донесения и записи участников экспедиции — живые свидетельства эпохи. Эти тексты сохранились в архивах Адмиралтейств-коллегии и Академии наук, донеся до нас голоса первопроходцев.
+                </p>
+              </div>
+              <div className="documents-grid">
+                <div className="doc-card">
+                  <p className="doc-card-type">Рапорт в Адмиралтейств-коллегию</p>
+                  <p className="doc-quote">
+                    «...по приказанию г. капитан-командора отправились мы из Верхнеудинска майя 14 дня 1735 году со всею командою и припасами, следуя трактом до Якутска, описывая при том реки и горные хребты...»
+                  </p>
+                  <p className="doc-source">Из донесения начальника отряда · 1735 г.</p>
+                </div>
+                <div className="doc-card">
+                  <p className="doc-card-type">Журнал экспедиции</p>
+                  <p className="doc-quote">
+                    «...хребет Джугджур преодолевали мы девять суток в жестокие морозы, лошади падали, провиант убывал, однако ж люди духом не падали и задание своё исполняли исправно...»
+                  </p>
+                  <p className="doc-source">Путевой журнал отряда · зима 1736 г.</p>
+                </div>
+                <div className="doc-card">
+                  <p className="doc-card-type">Инструкция Адмиралтейств-коллегии</p>
+                  <p className="doc-quote">
+                    «Описать берега Охотского моря, устья рек впадающих, острова и глубины оных, составить карты с означением широты и долготы мест, народы населяющие тот край переписать...»
+                  </p>
+                  <p className="doc-source">Инструкция Сената · 1733 г.</p>
+                </div>
+                <div className="doc-card">
+                  <p className="doc-card-type">Академические записки</p>
+                  <p className="doc-quote">
+                    «Великая Северная экспедиция есть предприятие, коему подобного не знала ещё история науки: тысячи вёрст берега описаны, народы изучены, природа Сибири открыта для просвещения...»
+                  </p>
+                  <p className="doc-source">Герхард Миллер, «История Сибири» · 1750 г.</p>
                 </div>
               </div>
             </div>
