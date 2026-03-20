@@ -6,7 +6,7 @@ const PhotographyBanner: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
-  const texts = ["БИЗНЕС.", "БРЕНДЫ."]
+  const texts = ["СИБИРЬ.", "ВОСТОК."]
 
   useEffect(() => {
     const typeSpeed = isDeleting ? 40 : 100
@@ -54,7 +54,7 @@ const PhotographyBanner: React.FC = () => {
         }
 
         .photography-banner *::selection {
-          background-color: rgba(241, 231, 40, 0.2);
+          background-color: rgba(203, 75, 22, 0.3);
           color: #ffffff;
         }
 
@@ -75,7 +75,7 @@ const PhotographyBanner: React.FC = () => {
           content: "";
           border-radius: 197.5px 0px;
           opacity: 0.4;
-          background: #d33682;
+          background: #cb4b16;
           filter: blur(162px);
           height: 35%;
           width: 55%;
@@ -103,7 +103,7 @@ const PhotographyBanner: React.FC = () => {
         }
 
         .left-part h1 .text {
-          color: #d33682;
+          color: #cb4b16;
           display: block;
           height: clamp(100px, 15vw, 120px);
         }
@@ -201,7 +201,7 @@ const PhotographyBanner: React.FC = () => {
         .book-link .arrow::after {
           position: absolute;
           content: "";
-          background-color: #d33682;
+          background-color: #cb4b16;
           transition: all ease-in-out 0.35s;
           transform-origin: 0 0;
           border-radius: 30px;
@@ -230,7 +230,7 @@ const PhotographyBanner: React.FC = () => {
         }
 
         .book-link .arrow span {
-          background-color: #d33682;
+          background-color: #cb4b16;
           height: 2px;
           width: 100%;
           display: inline-block;
@@ -245,7 +245,7 @@ const PhotographyBanner: React.FC = () => {
         }
 
         .book-link .arrow span::before {
-          background-color: #d33682;
+          background-color: #cb4b16;
           content: "";
           height: 100%;
           width: 15px;
@@ -270,7 +270,7 @@ const PhotographyBanner: React.FC = () => {
           content: "";
           border-radius: 197.5px 0px;
           opacity: 0.4;
-          background: #d33682;
+          background: #cb4b16;
           filter: blur(112px);
           height: 35%;
           width: 55%;
@@ -293,14 +293,14 @@ const PhotographyBanner: React.FC = () => {
 
         .particle {
           position: absolute;
-          background: rgba(211, 54, 130, 0.6);
+          background: rgba(203, 75, 22, 0.6);
           border-radius: 50%;
           pointer-events: none;
           animation: float linear infinite;
         }
 
         .particle:nth-child(odd) {
-          background: rgba(203, 75, 22, 0.4);
+          background: rgba(38, 139, 210, 0.4);
         }
 
         .particle:nth-child(3n) {
@@ -490,9 +490,176 @@ const PhotographyBanner: React.FC = () => {
           }
         }
 
-        .features-section {
+        /* ========== ROUTE SECTION ========== */
+        .route-section {
           padding: 100px 30px;
           background-color: #073642;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .route-section::before {
+          content: "";
+          border-radius: 197.5px 0px;
+          opacity: 0.3;
+          background: #cb4b16;
+          filter: blur(140px);
+          height: 40%;
+          width: 40%;
+          position: absolute;
+          top: 20%;
+          right: -20%;
+          z-index: 0;
+        }
+
+        .route-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+        }
+
+        .section-label {
+          color: #cb4b16;
+          font-family: "Montserrat", sans-serif;
+          font-size: 13px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          margin: 0 0 20px;
+        }
+
+        .route-title {
+          color: #fff;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: clamp(40px, 6vw, 90px);
+          line-height: 0.9;
+          margin: 0 0 50px;
+          text-transform: uppercase;
+        }
+
+        .route-title .highlight {
+          color: #cb4b16;
+        }
+
+        .route-map-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: start;
+        }
+
+        .map-wrapper {
+          position: relative;
+          background: rgba(0,0,0,0.3);
+          border: 1px solid rgba(203, 75, 22, 0.3);
+          border-radius: 16px;
+          overflow: hidden;
+          aspect-ratio: 4/3;
+        }
+
+        .map-wrapper img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.85;
+        }
+
+        .map-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, transparent 60%, rgba(0,43,54,0.8) 100%);
+        }
+
+        .map-badge {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          background: rgba(203, 75, 22, 0.9);
+          color: #fff;
+          font-family: "Montserrat", sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          padding: 8px 16px;
+          border-radius: 30px;
+        }
+
+        .route-timeline {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .timeline-item {
+          display: flex;
+          gap: 24px;
+          position: relative;
+        }
+
+        .timeline-item:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          left: 19px;
+          top: 40px;
+          width: 2px;
+          height: calc(100% - 10px);
+          background: rgba(203, 75, 22, 0.3);
+        }
+
+        .timeline-dot {
+          width: 40px;
+          height: 40px;
+          background: #cb4b16;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 13px;
+          color: #fff;
+          flex-shrink: 0;
+          margin-top: 4px;
+        }
+
+        .timeline-content {
+          padding-bottom: 36px;
+        }
+
+        .timeline-year {
+          color: #cb4b16;
+          font-family: "Montserrat", sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin: 0 0 6px;
+        }
+
+        .timeline-heading {
+          color: #fff;
+          font-family: "Montserrat", sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin: 0 0 8px;
+        }
+
+        .timeline-text {
+          color: #93a1a1;
+          font-family: "Inter", sans-serif;
+          font-size: 14px;
+          line-height: 1.7;
+          margin: 0;
+        }
+
+        /* ========== CREW SECTION ========== */
+        .features-section {
+          padding: 100px 30px;
+          background-color: #002b36;
           position: relative;
           overflow: hidden;
         }
@@ -501,7 +668,7 @@ const PhotographyBanner: React.FC = () => {
           content: "";
           border-radius: 197.5px 0px;
           opacity: 0.3;
-          background: #d33682;
+          background: #cb4b16;
           filter: blur(140px);
           height: 40%;
           width: 40%;
@@ -531,7 +698,7 @@ const PhotographyBanner: React.FC = () => {
         }
 
         .features-content h2 .highlight {
-          color: #d33682;
+          color: #cb4b16;
         }
 
         .features-list {
@@ -551,14 +718,14 @@ const PhotographyBanner: React.FC = () => {
         .feature-icon {
           width: 50px;
           height: 50px;
-          background: #d33682;
+          background: #cb4b16;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 20px;
           font-weight: bold;
-          color: #002b36;
+          color: #fff;
           flex-shrink: 0;
         }
 
@@ -571,16 +738,17 @@ const PhotographyBanner: React.FC = () => {
         }
 
         .feature-text p {
-          color: #aaa;
+          color: #93a1a1;
           font-family: "Inter", sans-serif;
           font-size: 14px;
           margin: 0;
           line-height: 1.6;
         }
 
+        /* ========== PEOPLE SECTION ========== */
         .testimonials-section {
           padding: 100px 30px;
-          background-color: #002b36;
+          background-color: #073642;
           position: relative;
           overflow: hidden;
         }
@@ -589,7 +757,7 @@ const PhotographyBanner: React.FC = () => {
           content: "";
           border-radius: 197.5px 0px;
           opacity: 0.4;
-          background: #d33682;
+          background: #cb4b16;
           filter: blur(120px);
           height: 50%;
           width: 30%;
@@ -643,7 +811,8 @@ const PhotographyBanner: React.FC = () => {
           padding: 40px 30px;
           position: relative;
           backdrop-filter: blur(10px);
-          width: 400px;
+          width: 380px;
+          text-align: left;
           flex-shrink: 0;
         }
 
@@ -668,12 +837,13 @@ const PhotographyBanner: React.FC = () => {
           width: 50px;
           height: 50px;
           border-radius: 50%;
-          background: #d33682;
+          background: #cb4b16;
           display: flex;
           align-items: center;
           justify-content: center;
           font-weight: bold;
-          color: #002b36;
+          color: #fff;
+          font-size: 18px;
         }
 
         .author-info h4 {
@@ -691,9 +861,10 @@ const PhotographyBanner: React.FC = () => {
           margin: 5px 0 0;
         }
 
+        /* ========== CTA SECTION ========== */
         .cta-section {
           padding: 120px 30px;
-          background-color: #073642;
+          background-color: #002b36;
           position: relative;
           overflow: hidden;
         }
@@ -702,7 +873,7 @@ const PhotographyBanner: React.FC = () => {
           content: "";
           border-radius: 197.5px 0px;
           opacity: 0.6;
-          background: #d33682;
+          background: #cb4b16;
           filter: blur(180px);
           height: 60%;
           width: 80%;
@@ -716,23 +887,24 @@ const PhotographyBanner: React.FC = () => {
         .cta-container {
           max-width: 800px;
           margin: 0 auto;
+          text-align: center;
         }
 
         .cta-title {
           color: #fff;
           font-family: "Montserrat", sans-serif;
           font-weight: 700;
-          font-size: clamp(80px, 12vw, 160px);
-          line-height: 0.8;
+          font-size: clamp(60px, 10vw, 140px);
+          line-height: 0.85;
           margin: 0 0 30px;
           text-transform: uppercase;
         }
 
         .cta-subtitle {
-          color: #d33682;
+          color: #93a1a1;
           font-family: "Montserrat";
-          font-size: 26px;
-          line-height: 1.6;
+          font-size: 20px;
+          line-height: 1.7;
           margin: 0 0 50px;
           max-width: 600px;
           margin-left: auto;
@@ -748,8 +920,8 @@ const PhotographyBanner: React.FC = () => {
 
         .cta-button {
           padding: 18px 40px;
-          background: #d33682;
-          color: #002b36;
+          background: #cb4b16;
+          color: #fff;
           text-decoration: none;
           font-family: "Montserrat";
           font-size: 16px;
@@ -757,31 +929,36 @@ const PhotographyBanner: React.FC = () => {
           text-transform: uppercase;
           border-radius: 50px;
           transition: all 0.3s ease;
-          border: 2px solid #d33682;
+          border: 2px solid #cb4b16;
         }
 
         .cta-button:hover {
           background: transparent;
-          color: #d33682;
+          color: #cb4b16;
         }
 
         .cta-button.secondary {
           background: transparent;
           color: #fff;
-          border: 2px solid #fff;
+          border: 2px solid rgba(255,255,255,0.4);
         }
 
         .cta-button.secondary:hover {
           background: transparent;
-          color: #d33682;
-          border: 2px solid #d33682;
+          color: #cb4b16;
+          border: 2px solid #cb4b16;
         }
 
         @media screen and (max-width: 1199px) {
+          .route-section,
           .features-section,
           .testimonials-section,
           .cta-section {
             padding: 80px 20px;
+          }
+          .route-map-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
           }
           .features-container {
             gap: 40px;
@@ -795,6 +972,7 @@ const PhotographyBanner: React.FC = () => {
         }
 
         @media screen and (max-width: 767px) {
+          .route-section,
           .features-section,
           .testimonials-section,
           .cta-section {
@@ -809,6 +987,7 @@ const PhotographyBanner: React.FC = () => {
           }
           .testimonial-card {
             padding: 30px 20px;
+            width: 300px;
           }
           .cta-buttons {
             flex-direction: column;
@@ -824,11 +1003,12 @@ const PhotographyBanner: React.FC = () => {
 
       <div className="photography-banner">
         <main>
+          {/* HERO */}
           <section className="info-section">
             <div className="left-part">
               <h1>
                 <span className="d-flex">
-                  {["С", "О", "З", "Д", "А", "Ё", "М"].map((char, index) => (
+                  {["П", "О", "Х", "О", "Д", " ", "В"].map((char, index) => (
                     <span key={index} className="char tracking-tighter" style={{ animationDelay: `${index * 0.08}s` }}>
                       {char === " " ? "\u00A0" : char}
                     </span>
@@ -837,10 +1017,10 @@ const PhotographyBanner: React.FC = () => {
                 <span className="text tracking-tighter">{currentText}</span>
               </h1>
               <p className="tracking-widest">
-                Помогаем предпринимателям запускать цифровые продукты быстрее с помощью современных технологий
+                Верхнеудинско-Охотский отряд · 1735–1737 · Великая Северная экспедиция
               </p>
-              <a href="#cta" className="book-link">
-                <span className="linktext tracking-tighter text-3xl">Начать проект</span>
+              <a href="#route" className="book-link">
+                <span className="linktext tracking-tighter text-3xl">Изучить маршрут</span>
                 <span className="arrow">
                   <span></span>
                 </span>
@@ -867,63 +1047,135 @@ const PhotographyBanner: React.FC = () => {
                 <img
                   src="https://www.yudiz.com/codepen/photography-banner/wave.svg"
                   alt="Line"
-                  style={{ filter: "hue-rotate(280deg) saturate(1.5)" }}
+                  style={{ filter: "hue-rotate(30deg) saturate(1.5)" }}
                 />
                 <img
                   src="https://www.yudiz.com/codepen/photography-banner/wave.svg"
                   alt="Line"
-                  style={{ filter: "hue-rotate(280deg) saturate(1.5)" }}
+                  style={{ filter: "hue-rotate(30deg) saturate(1.5)" }}
                 />
               </div>
+              <img
+                src="https://cdn.poehali.dev/projects/26be4ca2-2a20-4077-a402-cfa1518a4c2a/files/4b38783a-81a0-45fa-822e-4ddca20a23c2.jpg"
+                alt="Карта экспедиции"
+                className="hero-image"
+              />
               <div className="bg-dash-circle">
                 <img
                   src="https://www.yudiz.com/codepen/photography-banner/dash-circle.svg"
                   alt="dash-circle"
-                  style={{ filter: "hue-rotate(280deg) saturate(1.5)" }}
+                  style={{ filter: "hue-rotate(30deg) saturate(1.5)" }}
                 />
               </div>
             </div>
           </section>
 
+          {/* ROUTE */}
+          <section className="route-section" id="route">
+            <div className="route-container">
+              <p className="section-label">Маршрут экспедиции</p>
+              <h2 className="route-title">
+                От Верхнеудинска<br />
+                <span className="highlight">до Охотска</span>
+              </h2>
+              <div className="route-map-container">
+                <div>
+                  <div className="map-wrapper">
+                    <img
+                      src="https://cdn.poehali.dev/projects/26be4ca2-2a20-4077-a402-cfa1518a4c2a/files/4b38783a-81a0-45fa-822e-4ddca20a23c2.jpg"
+                      alt="Карта маршрута Верхнеудинско-Охотского отряда"
+                    />
+                    <div className="map-overlay" />
+                    <span className="map-badge">≈ 2800 км пути</span>
+                  </div>
+                </div>
+                <div className="route-timeline">
+                  <div className="timeline-item">
+                    <div className="timeline-dot">1</div>
+                    <div className="timeline-content">
+                      <p className="timeline-year">1735, весна</p>
+                      <h3 className="timeline-heading">Верхнеудинск</h3>
+                      <p className="timeline-text">
+                        Отряд формируется в Верхнеудинске (ныне Улан-Удэ) — ключевом пункте на Баргузинском тракте. Получены провизия, инструменты и инструкции от Сената.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="timeline-item">
+                    <div className="timeline-dot">2</div>
+                    <div className="timeline-content">
+                      <p className="timeline-year">1735–1736</p>
+                      <h3 className="timeline-heading">Якутск — промежуточная база</h3>
+                      <p className="timeline-text">
+                        Движение через бескрайние просторы Восточной Сибири. Отряд пересекает реки Лена и Алдан, ведёт геодезическую съёмку и описание берегов.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="timeline-item">
+                    <div className="timeline-dot">3</div>
+                    <div className="timeline-content">
+                      <p className="timeline-year">1736</p>
+                      <h3 className="timeline-heading">Хребты Джугджур</h3>
+                      <p className="timeline-text">
+                        Преодоление горного хребта Джугджур — труднейший участок пути. Суровые морозы, бездорожье и нехватка продовольствия испытывают стойкость команды.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="timeline-item">
+                    <div className="timeline-dot">4</div>
+                    <div className="timeline-content">
+                      <p className="timeline-year">1737, осень</p>
+                      <h3 className="timeline-heading">Охотск</h3>
+                      <p className="timeline-text">
+                        Достижение Охотска — главного порта России на Тихом океане. Составлены подробные карты побережья, описаны народы и природа края.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* CREW */}
           <section className="features-section">
             <div className="features-container">
               <div className="features-content">
-                <h2>Почему выбирают нас?</h2>
+                <p className="section-label">Участники</p>
+                <h2>Состав<br /><span className="highlight">отряда</span></h2>
               </div>
               <ul className="features-list">
                 <li className="feature-item">
-                  <div className="feature-icon">01</div>
+                  <div className="feature-icon">⚓</div>
                   <div className="feature-text">
-                    <h3>Опытная команда</h3>
-                    <p className="font-light tracking-wider">
-                      Более 10 лет опыта в разработке цифровых продуктов для бизнеса любого масштаба
+                    <h3>Офицеры флота</h3>
+                    <p className="tracking-wider">
+                      Морские офицеры руководили навигацией и составлением морских карт вдоль побережья Охотского моря
                     </p>
                   </div>
                 </li>
                 <li className="feature-item">
-                  <div className="feature-icon">02</div>
+                  <div className="feature-icon">🗺</div>
                   <div className="feature-text">
-                    <h3>Современные технологии</h3>
+                    <h3>Геодезисты</h3>
                     <p className="tracking-wider">
-                      Используем передовые инструменты и фреймворки для создания быстрых и надёжных решений
+                      Выполняли астрономические наблюдения и триангуляционную съёмку для создания точных географических карт
                     </p>
                   </div>
                 </li>
                 <li className="feature-item">
-                  <div className="feature-icon">03</div>
+                  <div className="feature-icon">🌿</div>
                   <div className="feature-text">
-                    <h3>Индивидуальный подход</h3>
+                    <h3>Натуралисты</h3>
                     <p className="tracking-wider">
-                      Каждый проект уникален — мы адаптируем решения под ваши конкретные задачи и цели
+                      Описывали флору и фауну, собирали коллекции образцов горных пород, растений и животных Сибири
                     </p>
                   </div>
                 </li>
                 <li className="feature-item">
-                  <div className="feature-icon">04</div>
+                  <div className="feature-icon">⚔</div>
                   <div className="feature-text">
-                    <h3>Поддержка 24/7</h3>
+                    <h3>Солдаты и казаки</h3>
                     <p className="tracking-wider">
-                      Обеспечиваем техническую поддержку и сопровождение на всех этапах работы
+                      Обеспечивали охрану отряда, прокладку пути через тайгу и налаживали контакт с местными народами
                     </p>
                   </div>
                 </li>
@@ -931,79 +1183,80 @@ const PhotographyBanner: React.FC = () => {
             </div>
           </section>
 
+          {/* KEY PEOPLE */}
           <section className="testimonials-section">
             <div className="testimonials-container">
-              <h2 className="testimonials-title">Отзывы клиентов</h2>
+              <h2 className="testimonials-title">Ключевые<br />люди</h2>
               <div className="testimonials-marquee">
                 <div className="testimonial-card">
                   <p className="testimonial-quote">
-                    "Команда полностью изменила наш подход к цифровому присутствию. Результаты превзошли все ожидания."
+                    «Составить точнейшее описание берегов и устьев рек, впадающих в Охотское море, со всеми островами» — такова была задача отряда.
                   </p>
                   <div className="testimonial-author">
-                    <div className="author-avatar">АС</div>
+                    <div className="author-avatar">📜</div>
                     <div className="author-info">
-                      <h4>Алексей Смирнов</h4>
-                      <p>Директор по развитию</p>
+                      <h4>Дмитрий Лаптев</h4>
+                      <p>Командир Ленского отряда, соратник экспедиции</p>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
                   <p className="testimonial-quote">
-                    "Профессиональный подход и внимание к деталям. Запустили проект в рекордные сроки без потери качества."
+                    Иван Биллингс прошёл сложнейший маршрут через хребет Джугджур, ведя непрерывные астрономические наблюдения для определения координат.
                   </p>
                   <div className="testimonial-author">
-                    <div className="author-avatar">МК</div>
+                    <div className="author-avatar">🔭</div>
                     <div className="author-info">
-                      <h4>Мария Козлова</h4>
-                      <p>Основатель стартапа</p>
+                      <h4>Геодезисты отряда</h4>
+                      <p>Астрономические и триангуляционные наблюдения</p>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
                   <p className="testimonial-quote">
-                    "От идеи до запуска — всё прошло гладко. Рекомендую всем, кто ценит качество и скорость."
+                    Великая Северная экспедиция — крупнейшее исследовательское предприятие XVIII века, охватившее побережье от Архангельска до Камчатки.
                   </p>
                   <div className="testimonial-author">
-                    <div className="author-avatar">ДВ</div>
+                    <div className="author-avatar">⚡</div>
                     <div className="author-info">
-                      <h4>Дмитрий Волков</h4>
-                      <p>Предприниматель</p>
+                      <h4>Витус Беринг</h4>
+                      <p>Организатор Второй Камчатской экспедиции</p>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
                   <p className="testimonial-quote">
-                    "Команда полностью изменила наш подход к цифровому присутствию. Результаты превзошли все ожидания."
+                    Степан Малыгин, Семён Челюскин, братья Лаптевы — имена первопроходцев, чьи открытия навсегда вошли в историю географии.
                   </p>
                   <div className="testimonial-author">
-                    <div className="author-avatar">АС</div>
+                    <div className="author-avatar">🧭</div>
                     <div className="author-info">
-                      <h4>Алексей Смирнов</h4>
-                      <p>Директор по развитию</p>
+                      <h4>Участники ВСЭ</h4>
+                      <p>Первопроходцы северных морей</p>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
                   <p className="testimonial-quote">
-                    "Профессиональный подход и внимание к деталям. Запустили проект в рекордные сроки без потери качества."
+                    «Составить точнейшее описание берегов и устьев рек, впадающих в Охотское море, со всеми островами» — такова была задача отряда.
                   </p>
                   <div className="testimonial-author">
-                    <div className="author-avatar">МК</div>
+                    <div className="author-avatar">📜</div>
                     <div className="author-info">
-                      <h4>Мария Козлова</h4>
-                      <p>Основатель стартапа</p>
+                      <h4>Дмитрий Лаптев</h4>
+                      <p>Командир Ленского отряда, соратник экспедиции</p>
                     </div>
                   </div>
                 </div>
                 <div className="testimonial-card">
                   <p className="testimonial-quote">
-                    "От идеи до запуска — всё прошло гладко. Рекомендую всем, кто ценит качество и скорость."
+                    Иван Биллингс прошёл сложнейший маршрут через хребет Джугджур, ведя непрерывные астрономические наблюдения для определения координат.
                   </p>
                   <div className="testimonial-author">
-                    <div className="author-avatar">ДВ</div>
+                    <div className="author-avatar">🔭</div>
                     <div className="author-info">
-                      <h4>Дмитрий Волков</h4>
-                      <p>Предприниматель</p>
+                      <h4>Геодезисты отряда</h4>
+                      <p>Астрономические и триангуляционные наблюдения</p>
                     </div>
                   </div>
                 </div>
@@ -1011,18 +1264,19 @@ const PhotographyBanner: React.FC = () => {
             </div>
           </section>
 
+          {/* CTA */}
           <section className="cta-section" id="cta">
             <div className="cta-container">
-              <h2 className="cta-title text-center">Готовы начать?</h2>
+              <h2 className="cta-title">Путь<br />в историю</h2>
               <p className="cta-subtitle">
-                Присоединяйтесь к сотням компаний, которые уже трансформировали свой бизнес. Ваш путь к успеху начинается здесь.
+                Экспедиция 1735–1737 годов — часть Великой Северной экспедиции, открывшей миру восточное побережье России
               </p>
               <div className="cta-buttons">
-                <a href="#" className="cta-button">
-                  Обсудить проект
+                <a href="#route" className="cta-button">
+                  Изучить маршрут
                 </a>
                 <a href="#" className="cta-button secondary">
-                  Посмотреть кейсы
+                  Состав отряда
                 </a>
               </div>
             </div>

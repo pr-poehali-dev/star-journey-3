@@ -1,78 +1,36 @@
-import { Facebook, Instagram, Twitter, Github, Mail, MapPin, Phone } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const data = {
-  facebookLink: "https://facebook.com/digitalhub",
-  instaLink: "https://instagram.com/digitalhub",
-  twitterLink: "https://twitter.com/digitalhub",
-  githubLink: "https://github.com/digitalhub",
-  services: {
-    web: "/web-razrabotka",
-    mobile: "/mobilnye-prilozheniya",
-    design: "/ui-ux-dizajn",
-    marketing: "/digital-marketing",
+  sections: {
+    expedition: [
+      { text: "Маршрут экспедиции", href: "#route" },
+      { text: "Состав отряда", href: "#crew" },
+      { text: "Ключевые люди", href: "#people" },
+    ],
+    context: [
+      { text: "Великая Северная экспедиция", href: "#" },
+      { text: "Вторая Камчатская экспедиция", href: "#" },
+      { text: "Витус Беринг", href: "#" },
+    ],
+    geography: [
+      { text: "Верхнеудинск", href: "#" },
+      { text: "Охотское море", href: "#" },
+      { text: "Хребет Джугджур", href: "#" },
+    ],
   },
-  about: {
-    story: "/o-nas",
-    team: "/komanda",
-    portfolio: "/portfolio",
-    careers: "/vakansii",
-  },
-  help: {
-    faqs: "/faq",
-    support: "/podderzhka",
-    blog: "/blog",
-  },
-  contact: {
-    email: "hello@digitalhub.ru",
-    phone: "+7 (495) 123-45-67",
-    address: "Москва, Россия",
-  },
-  company: {
-    name: "ДиджиталХаб",
-    description:
-      "Создаём цифровые продукты, которые помогают бизнесу расти. Веб-разработка, мобильные приложения и дизайн под ключ.",
-  },
+  facts: [
+    { value: "1735–1737", label: "Годы экспедиции" },
+    { value: "≈2800", label: "Километров пути" },
+    { value: "2 года", label: "Длительность" },
+  ],
 }
-
-const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: data.facebookLink },
-  { icon: Instagram, label: "Instagram", href: data.instaLink },
-  { icon: Twitter, label: "Twitter", href: data.twitterLink },
-  { icon: Github, label: "GitHub", href: data.githubLink },
-]
-
-const aboutLinks = [
-  { text: "О нас", href: data.about.story },
-  { text: "Команда", href: data.about.team },
-  { text: "Портфолио", href: data.about.portfolio },
-  { text: "Вакансии", href: data.about.careers },
-]
-
-const serviceLinks = [
-  { text: "Веб-разработка", href: data.services.web },
-  { text: "Мобильные приложения", href: data.services.mobile },
-  { text: "UI/UX Дизайн", href: data.services.design },
-  { text: "Digital-маркетинг", href: data.services.marketing },
-]
-
-const helpfulLinks = [
-  { text: "FAQ", href: data.help.faqs },
-  { text: "Поддержка", href: data.help.support },
-  { text: "Блог", href: data.help.blog, hasIndicator: true },
-]
-
-const contactInfo = [
-  { icon: Mail, text: data.contact.email },
-  { icon: Phone, text: data.contact.phone },
-  { icon: MapPin, text: data.contact.address, isAddress: true },
-]
 
 export default function Footer() {
   return (
     <>
       <style>{`
         .ai-footer {
-          background-color: #073642;
+          background-color: #001f27;
           position: relative;
           overflow: hidden;
         }
@@ -80,28 +38,14 @@ export default function Footer() {
         .ai-footer::before {
           content: "";
           border-radius: 197.5px 0px;
-          opacity: 0.3;
-          background: #d33682;
+          opacity: 0.25;
+          background: #cb4b16;
           filter: blur(140px);
           height: 60%;
           width: 50%;
           position: absolute;
           top: 20%;
           left: -25%;
-          z-index: 0;
-        }
-
-        .ai-footer::after {
-          content: "";
-          border-radius: 197.5px 0px;
-          opacity: 0.2;
-          background: #cb4b16;
-          filter: blur(120px);
-          height: 40%;
-          width: 40%;
-          position: absolute;
-          bottom: 10%;
-          right: -20%;
           z-index: 0;
         }
 
@@ -113,9 +57,9 @@ export default function Footer() {
           padding: 80px 30px 30px;
         }
 
-        .footer-grid {
+        .footer-top {
           display: grid;
-          grid-template-columns: 1fr 2fr;
+          grid-template-columns: 1.5fr 2fr;
           gap: 80px;
           margin-bottom: 60px;
         }
@@ -129,79 +73,79 @@ export default function Footer() {
           display: flex;
           align-items: center;
           gap: 15px;
-          margin-bottom: 30px;
+          margin-bottom: 24px;
         }
 
         .brand-icon {
           width: 50px;
           height: 50px;
-          background: #d33682;
+          background: #cb4b16;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-family: "Montserrat", sans-serif;
-          font-weight: 700;
-          font-size: 20px;
-          color: #002b36;
+          font-size: 22px;
+          color: #fff;
         }
 
         .brand-name {
           font-family: "Montserrat", sans-serif;
           font-weight: 700;
-          font-size: 28px;
+          font-size: 22px;
           color: #ffffff;
           text-transform: uppercase;
+          line-height: 1.2;
         }
 
         .brand-description {
           font-family: "Montserrat";
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.8;
-          color: #aaa;
+          color: #657b83;
           margin-bottom: 40px;
-          max-width: 400px;
         }
 
-        .social-links {
+        .facts-row {
           display: flex;
-          gap: 20px;
+          gap: 40px;
+          flex-wrap: wrap;
         }
 
-        .social-link {
-          width: 45px;
-          height: 45px;
-          background: rgba(211, 54, 130, 0.1);
-          border: 1px solid #333;
-          border-radius: 50%;
+        .fact-item {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #d33682;
-          text-decoration: none;
-          transition: all 0.3s ease;
+          flex-direction: column;
+          gap: 4px;
         }
 
-        .social-link:hover {
-          background: #d33682;
-          color: #002b36;
-          transform: translateY(-2px);
+        .fact-value {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 28px;
+          color: #cb4b16;
+        }
+
+        .fact-label {
+          font-family: "Montserrat";
+          font-size: 12px;
+          color: #657b83;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
 
         .footer-links {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 40px;
         }
 
         .link-column h3 {
           font-family: "Montserrat", sans-serif;
           font-weight: 700;
-          font-size: 16px;
-          color: #d33682;
+          font-size: 14px;
+          color: #cb4b16;
           text-transform: uppercase;
-          margin: 0 0 25px;
-          letter-spacing: 1px;
+          margin: 0 0 20px;
+          letter-spacing: 1.5px;
         }
 
         .link-list {
@@ -211,13 +155,13 @@ export default function Footer() {
         }
 
         .link-item {
-          margin-bottom: 15px;
+          margin-bottom: 12px;
         }
 
         .link-item a {
           font-family: "Montserrat";
           font-size: 14px;
-          color: #aaa;
+          color: #657b83;
           text-decoration: none;
           transition: color 0.3s ease;
           display: flex;
@@ -229,68 +173,8 @@ export default function Footer() {
           color: #ffffff;
         }
 
-        .contact-item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .contact-icon {
-          width: 20px;
-          height: 20px;
-          color: #d33682;
-          flex-shrink: 0;
-        }
-
-        .live-indicator {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-        }
-
-        .pulse-dot {
-          position: relative;
-          width: 8px;
-          height: 8px;
-        }
-
-        .pulse-dot::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: #d33682;
-          border-radius: 50%;
-          animation: pulse 2s infinite;
-        }
-
-        .pulse-dot::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: #d33682;
-          border-radius: 50%;
-        }
-
-        @keyframes pulse {
-          0% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(211, 54, 130, 0.7);
-          }
-          70% {
-            transform: scale(1);
-            box-shadow: 0 0 0 10px rgba(211, 54, 130, 0);
-          }
-          100% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(211, 54, 130, 0);
-          }
-        }
-
         .footer-bottom {
-          border-top: 1px solid #333;
+          border-top: 1px solid #073642;
           padding-top: 30px;
           display: flex;
           justify-content: space-between;
@@ -302,165 +186,102 @@ export default function Footer() {
         .copyright {
           font-family: "Montserrat";
           font-size: 14px;
-          color: #aaa;
+          color: #657b83;
         }
 
-        .copyright a {
-          color: #d33682;
-          text-decoration: none;
-          transition: color 0.3s ease;
+        .copyright span {
+          color: #cb4b16;
         }
 
-        .copyright a:hover {
-          color: #ffffff;
-        }
-
-        .footer-legal {
+        .footer-badge {
           display: flex;
-          gap: 30px;
-        }
-
-        .footer-legal a {
+          align-items: center;
+          gap: 8px;
           font-family: "Montserrat";
-          font-size: 14px;
-          color: #aaa;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .footer-legal a:hover {
-          color: #ffffff;
+          font-size: 12px;
+          color: #657b83;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
 
         @media screen and (max-width: 1199px) {
-          .footer-container {
-            padding: 60px 20px 20px;
+          .footer-top {
+            grid-template-columns: 1fr;
+            gap: 40px;
           }
-
-          .footer-grid {
-            gap: 60px;
-          }
-
           .footer-links {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
           }
         }
 
         @media screen and (max-width: 767px) {
           .footer-container {
-            padding: 40px 16px 16px;
+            padding: 60px 16px 20px;
           }
-
-          .footer-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-
           .footer-links {
-            grid-template-columns: 1fr;
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
           }
-
-          .brand-name {
-            font-size: 24px;
-          }
-
-          .brand-description {
-            font-size: 14px;
-          }
-
-          .social-links {
-            gap: 15px;
-          }
-
-          .social-link {
-            width: 40px;
-            height: 40px;
-          }
-
           .footer-bottom {
             flex-direction: column;
             text-align: center;
-            gap: 15px;
           }
-
-          .footer-legal {
-            gap: 20px;
+          .facts-row {
+            gap: 24px;
           }
         }
       `}</style>
 
       <footer className="ai-footer">
         <div className="footer-container">
-          <div className="footer-grid">
+          <div className="footer-top">
             <div className="footer-brand">
               <div className="brand-logo">
-                <div className="brand-icon">DH</div>
-                <span className="brand-name">{data.company.name}</span>
+                <div className="brand-icon">🧭</div>
+                <div className="brand-name">
+                  Верхнеудинско-<br />Охотский отряд
+                </div>
               </div>
-              <p className="brand-description">{data.company.description}</p>
-              <div className="social-links">
-                {socialLinks.map(({ icon: Icon, label, href }) => (
-                  <a key={label} href={href} className="social-link" aria-label={label}>
-                    <Icon size={20} />
-                  </a>
+              <p className="brand-description">
+                Документация Верхнеудинско-Охотского отряда Великой Северной экспедиции 1735–1737 годов. 
+                Более 2800 км пути через нехоженые просторы Восточной Сибири.
+              </p>
+              <div className="facts-row">
+                {data.facts.map((fact, i) => (
+                  <div key={i} className="fact-item">
+                    <span className="fact-value">{fact.value}</span>
+                    <span className="fact-label">{fact.label}</span>
+                  </div>
                 ))}
               </div>
             </div>
 
             <div className="footer-links">
               <div className="link-column">
-                <h3>О компании</h3>
+                <h3>Экспедиция</h3>
                 <ul className="link-list">
-                  {aboutLinks.map(({ text, href }) => (
-                    <li key={text} className="link-item">
-                      <a href={href}>{text}</a>
+                  {data.sections.expedition.map((link, i) => (
+                    <li key={i} className="link-item">
+                      <a href={link.href}>{link.text}</a>
                     </li>
                   ))}
                 </ul>
               </div>
-
               <div className="link-column">
-                <h3>Услуги</h3>
+                <h3>Контекст</h3>
                 <ul className="link-list">
-                  {serviceLinks.map(({ text, href }) => (
-                    <li key={text} className="link-item">
-                      <a href={href}>{text}</a>
+                  {data.sections.context.map((link, i) => (
+                    <li key={i} className="link-item">
+                      <a href={link.href}>{link.text}</a>
                     </li>
                   ))}
                 </ul>
               </div>
-
               <div className="link-column">
-                <h3>Ресурсы</h3>
+                <h3>География</h3>
                 <ul className="link-list">
-                  {helpfulLinks.map(({ text, href, hasIndicator }) => (
-                    <li key={text} className="link-item">
-                      <a href={href}>
-                        {hasIndicator ? (
-                          <span className="live-indicator">
-                            {text}
-                            <span className="pulse-dot"></span>
-                          </span>
-                        ) : (
-                          text
-                        )}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="link-column">
-                <h3>Контакты</h3>
-                <ul className="link-list">
-                  {contactInfo.map(({ icon: Icon, text, isAddress }) => (
-                    <li key={text} className="link-item">
-                      <a href="#" className="contact-item">
-                        <Icon className="contact-icon" size={20} />
-                        {isAddress ? <address style={{ fontStyle: "normal" }}>{text}</address> : <span>{text}</span>}
-                      </a>
+                  {data.sections.geography.map((link, i) => (
+                    <li key={i} className="link-item">
+                      <a href={link.href}>{link.text}</a>
                     </li>
                   ))}
                 </ul>
@@ -470,11 +291,11 @@ export default function Footer() {
 
           <div className="footer-bottom">
             <p className="copyright">
-              2025 <a href="https://poehali.dev">poehali.dev</a>
+              Великая Северная экспедиция · <span>1733–1743</span> · Российская империя
             </p>
-            <div className="footer-legal">
-              <a href="/privacy">Политика конфиденциальности</a>
-              <a href="/terms">Условия использования</a>
+            <div className="footer-badge">
+              <Icon name="MapPin" size={14} />
+              Верхнеудинск → Охотск
             </div>
           </div>
         </div>
